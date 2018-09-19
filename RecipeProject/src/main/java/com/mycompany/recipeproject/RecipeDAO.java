@@ -1,4 +1,3 @@
-
 package com.mycompany.recipeproject;
 
 import java.sql.Connection;
@@ -6,8 +5,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class RecipeDAO {
-    
-    public RecipeDTO getUserById(int id) {
+
+    public RecipeDTO getRecipeById(int id) {
         try {
             Connection c = new DBConnector().getConnection();
             Statement stmt = c.createStatement();
@@ -30,5 +29,24 @@ public class RecipeDAO {
             System.out.println("Error");
         }
         return null;
+    }
+
+    public int countRecipes() {
+        int count = 0;
+        try {
+            Connection c = new DBConnector().getConnection();
+            Statement stmt = c.createStatement();
+            String query
+                    = "SELECT COUNT(*) AS `count` "
+                    + "FROM `Recipe`;";
+            ResultSet res = stmt.executeQuery(query);
+            while (res.next()) {
+                count = Integer.parseInt(res.getString("count"));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error");
+        }
+        return count;
     }
 }
