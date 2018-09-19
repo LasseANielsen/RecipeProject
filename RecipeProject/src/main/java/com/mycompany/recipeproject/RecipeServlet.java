@@ -27,18 +27,35 @@ public class RecipeServlet extends HttpServlet {
         Controller c = new Controller();
         int id = Integer.parseInt(request.getParameter("id"));
         RecipeDTO recipe = c.getRecipe(id);
+
+        String image_path = "";
+        switch (id) {
+            case 1:
+                image_path = "images/kage.jpg";
+                break;
+            case 2:
+                image_path = "images/milkshake.jpg";
+                break;
+            default:
+                break;
+        }
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<style>");
+            out.println("h1 {color:orange;}");
+            out.println("p {color:pink;}");
+            out.println("body{color: black; background: brown;}");
+            out.println("</style>");
             out.println("<title>Servlet RecipeServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>" + recipe.getName() + "</h1>");
-            //out.println("recipe.image");
-            out.println(recipe.getIngredients());
-            out.println(recipe.getInstructions());
+            out.println("<img src=\"" + image_path + "\" width=\"210\" height=\"210\">");
+            out.println("<p>" + recipe.getIngredients() + "</p>");
+            out.println("<p>" + recipe.getInstructions() + "</p>");
             out.println("</body>");
             out.println("</html>");
         }
