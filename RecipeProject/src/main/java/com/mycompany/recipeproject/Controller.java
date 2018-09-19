@@ -2,18 +2,20 @@ package com.mycompany.recipeproject;
 
 public class Controller {
 
-    UserDAO DAO = new UserDAO();
+    UserDAO userDAO = new UserDAO();
+    RecipeDAO recipeDAO = new RecipeDAO();
     
     public ImageDTO getImage(int id) {
         return null; //new ImageDTO();
     }
 
     public RecipeDTO getRecipe(int id) {
-        return null; //new RecipeDTO();
+        RecipeDTO DTO = recipeDAO.getUserById(id);
+        return DTO;
     }
 
     public UserDTO getUser(int id) {
-        UserDTO DTO = DAO.getUserById(id);
+        UserDTO DTO = userDAO.getUserById(id);
         return DTO;
     }
 }
