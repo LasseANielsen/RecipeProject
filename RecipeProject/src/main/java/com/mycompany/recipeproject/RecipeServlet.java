@@ -25,9 +25,8 @@ public class RecipeServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         Controller c = new Controller();
-        //int id = Integer.parseInt(request.getParameter("id"));
-        RecipeDTO recipe = c.getRecipe(1);
-        String name = recipe.getName();
+        int id = Integer.parseInt(request.getParameter("id"));
+        RecipeDTO recipe = c.getRecipe(id);
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -36,7 +35,7 @@ public class RecipeServlet extends HttpServlet {
             out.println("<title>Servlet RecipeServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>" + name + "</h1>");
+            out.println("<h1>" + recipe.getName() + "</h1>");
             //out.println("recipe.image");
             out.println(recipe.getIngredients());
             out.println(recipe.getInstructions());
