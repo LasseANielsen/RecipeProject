@@ -26,7 +26,7 @@ public class RecipeServlet extends HttpServlet {
         
         Controller c = new Controller();
         int id = Integer.parseInt(request.getParameter("id"));
-        RecipeDTO recipe = null; // c.getRecipe(id);
+        RecipeDTO recipe = c.getRecipe(id);
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */

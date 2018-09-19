@@ -27,6 +27,11 @@ public class UserDTO {
     public String getPassword() {
         return password;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO{id: " + id + ", recipe_id: " + recipe_id + ", name: " + name + ", password: " + password + '}';
+    }
     
     
 }

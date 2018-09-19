@@ -2,29 +2,18 @@ package com.mycompany.recipeproject;
 
 public class Controller {
 
-    DBConnector DBC = null;
-
-    public Controller() {
-        createConnector();
-    }
+    UserDAO DAO = new UserDAO();
     
-    private void createConnector() {
-        try {
-            DBC = new DBConnector();
-        } catch (Exception ex) {
-            System.out.println("createConnector failed!");
-        }
+    public ImageDTO getImage(int id) {
+        return null; //new ImageDTO();
     }
 
-//    public ImageDTO getImage(int id) {
-//        return new ImageDTO();
-//    }
-//
-//    public RecipeDTO getRecipe(int id) {
-//        return new RecipeDTO();
-//    }
-//
-//    public UserDTO getUser(int id) {
-//        return new UserDTO();
-//    }
+    public RecipeDTO getRecipe(int id) {
+        return null; //new RecipeDTO();
+    }
+
+    public UserDTO getUser(int id) {
+        UserDTO DTO = DAO.getUserById(id);
+        return DTO;
+    }
 }
