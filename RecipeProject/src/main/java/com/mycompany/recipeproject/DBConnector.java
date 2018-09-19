@@ -8,11 +8,11 @@ public class DBConnector {
     private Connection connection = null;
 
     //Constants
-    private static final String IP = "104.248.29.81";
+    private static final String IP = "46.101.122.191";
     private static final String PORT = "3306";
     public static final String DATABASE = "recipeproject";
-    private static final String USERNAME = "Michael";
-    private static final String PASSWORD = "1997DuE"; //1997DueM1997DueM 1997DuE
+    private static final String USERNAME = "lasse";
+    private static final String PASSWORD = "1234"; 
 
     public DBConnector() throws Exception {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
