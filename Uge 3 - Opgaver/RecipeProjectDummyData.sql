@@ -1,14 +1,18 @@
 USE `recipeproject`;
 
-INSERT INTO `Image`(`id`, `url`) VALUES
-('1', 'url'),
-('2', 'url');
+INSERT INTO `User`(`Id`,`Username`,`Password`) VALUES
+('1','Michael', 'xddddd'),
+('2','Lasse', '1337360'),
+('3','Christian', 'narh');
 
-INSERT INTO `Recipe`(`id`,`name`,`ingredients`,`instructions`,`image_id`,`rating`) VALUES
-('1','Kage', 'Kagedej','Læg kagedejen i et fad og så i ovnen til den ser god ud!','1','5'),
-('2','Milkshake', 'Mælk, Milkshake pulver','Blandet de to ting og bum!','2','4');
+INSERT INTO `Recipe`(`Id`,`Name`,`Description`,`To_do`,`Cookingtime`,`User_Id`) VALUES
+('1', 'Kage', 'Quick and easy guide to our amazing pokemon cake!', '1. Put the cake in the oven. 2. Done', '120', '1'),
+('2', 'Milkshake', 'Quick and easy guide to our amazing pokemon milkshake!', '1. Mix the milkshake powder with milk. 2. Done', '2', '2');
 
-INSERT INTO `User`(`id`,`name`,`password`,`recipe_id`) VALUES
-('1','Michael', 'xddddd','1'),
-('2','Lasse', '1337360','2'),
-('3','Christian', 'narh', NULL);
+INSERT INTO `Ingredient`(`Id`, `Name`) VALUES
+('1', 'Cakemix'),
+('2', 'Milkshake powder');
+
+INSERT INTO `Recipe_has_ingredient`(`Recipe_Id`,`Ingredient_Id`,`Amount`,`Measure`) VALUES
+('1', '1', '1', 'Packet'),
+('2','2','1','Packet');

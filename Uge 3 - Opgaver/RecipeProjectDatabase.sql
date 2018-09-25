@@ -29,8 +29,8 @@ ENGINE = InnoDB;
 -- Table `recipeproject`.`Recipe`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `recipeproject`.`Recipe` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(45) NOT NULL,
   `Description` VARCHAR(200) NOT NULL,
   `To_do` VARCHAR(2000) NOT NULL,
   `Cookingtime` INT NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `recipeproject`.`Recipe_has_ingredient` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Recipe_has_ingredient_Recipe1`
     FOREIGN KEY (`Recipe_Id`)
-    REFERENCES `recipeproject`.`Recipe` (`id`)
+    REFERENCES `recipeproject`.`Recipe` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
