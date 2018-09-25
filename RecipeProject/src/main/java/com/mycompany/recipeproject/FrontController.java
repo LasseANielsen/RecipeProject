@@ -37,6 +37,8 @@ public class FrontController extends HttpServlet {
                 default:
                     response.sendRedirect("/RecipeProject/index");
             }
+        } else {
+            response.sendRedirect("/RecipeProject/index");
         }
     }
 
