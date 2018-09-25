@@ -9,7 +9,10 @@
         <h1>Register</h1>
     </body>
     <div>
-        
-        
+        <form action="todo">
+            <p>Username</p><input type="text" name="username">
+            <p>Password</p><input type="text" name="password">
+            <br><br><input type="submit" value="Create user">
+        </form>");
     </div>
 </html>
