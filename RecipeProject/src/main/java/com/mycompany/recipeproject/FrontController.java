@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontController extends HttpServlet {
 
     Controller c = new Controller();
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -26,16 +26,18 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String origin = request.getParameter("origin");
-        switch (origin) {
-            case "recipe":
-                int id = Integer.parseInt(request.getParameter("recipe_id"));
-                RecipeDTO recipeDTO = c.getRecipe(id);
-                request.setAttribute("recipe", recipeDTO);
-                request.getRequestDispatcher("Recipe.jsp").forward(request, response);
-                break;
-            default:
+        if (origin != null) {
+            switch (origin) {
+                case "recipe":
+                    int id = 1;//Integer.parseInt(request.getParameter("recipe_id"));
+                    RecipeDTO recipeDTO = c.getRecipe(id);
+                    request.setAttribute("recipe", recipeDTO);
+                    request.getRequestDispatcher("Recipe.jsp").forward(request, response);
+                    break;
+                default:
+                    response.sendRedirect("/RecipeProject/index");
+            }
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
