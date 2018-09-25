@@ -14,15 +14,11 @@
                 <p>Author</p>
             </div> 
             <div>
-
-                <p>Description</p>
-                <br>
+                <p>Description</p> <br>
                 <p> <% recipe.getDescription(); %> </p>
-
             </div>
             <div>
-                <p>To do</p>
-                <br>
+                <p>To do</p> <br>
                 <p> <% recipe.getToDo();%> </p>
             </div>
         </div>
