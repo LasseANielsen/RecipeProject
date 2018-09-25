@@ -1,6 +1,7 @@
 package com.mycompany.recipeproject;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,8 +33,12 @@ public class FrontController extends HttpServlet {
                     int id = 1;//Integer.parseInt(request.getParameter("recipe_id"));
                     RecipeDTO recipeDTO = c.getRecipe(id);
                     request.setAttribute("recipe", recipeDTO);
-                    request.getRequestDispatcher("Recipe.jsp").forward(request, response);
+                    request.getRequestDispatcher("/RecipeProject/Recipe.jsp").forward(request, response);
                     break;
+                case "allrecipes":
+                    List<RecipeDTO> recipes = c.getAllRecipes();
+                    request.setAttribute("recipes", recipes);
+                    request.getRequestDispatcher("/RecipeProject/AllRecipes.jsp").forward(request, response);
                 default:
                     response.sendRedirect("/RecipeProject/index");
             }
