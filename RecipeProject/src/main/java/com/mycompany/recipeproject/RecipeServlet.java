@@ -26,7 +26,7 @@ public class RecipeServlet extends HttpServlet {
 
         Controller c = new Controller();
         int id = Integer.parseInt(request.getParameter("id"));
-        RecipeDTO recipe = c.getRecipe(id);
+        RecipeDTO recipe = c.getRecipeById(id);
 
         String image_path = "";
         switch (id) {

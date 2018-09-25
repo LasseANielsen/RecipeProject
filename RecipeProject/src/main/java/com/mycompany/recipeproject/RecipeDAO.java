@@ -16,13 +16,13 @@ public class RecipeDAO {
                     + "WHERE `id` = '" + id + "';";
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
-                int recipe_id = Integer.parseInt(res.getString("id"));
-                String recipe_name = res.getString("name");
+                int recipe_id = Integer.parseInt(res.getString("Id"));
+                String recipe_name = res.getString("Name");
                 String recipe_description = res.getString("Description");
-                String recipe_toDo = res.getString("toDo");
+                String recipe_toDo = res.getString("To_do");
                 int recipe_Cookingtime = Integer.parseInt(res.getString("Cookingtime"));
                 int recipe_User_Id = Integer.parseInt(res.getString("User_Id"));
- //               return new RecipeDTO(id, recipe_Cookingtime, user_id, query, recipe_description, query)
+                return new RecipeDTO(recipe_id, recipe_Cookingtime, recipe_User_Id, recipe_name, recipe_description, recipe_toDo);
             }
         } catch (Exception ex) {
             ex.printStackTrace();

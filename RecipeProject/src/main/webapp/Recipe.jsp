@@ -8,18 +8,18 @@
     </head>
     <body>
         <% RecipeDTO recipe = (RecipeDTO) request.getAttribute("recipe"); %>
-        <h1>Recipe: <% recipe.getName(); %></h1>
+        <h1>Recipe: <% out.println(recipe.getName()); %></h1>
         <div> 
             <div>
                 <p>Author</p>
             </div> 
             <div>
                 <p>Description</p> <br>
-                <p> <% recipe.getDescription(); %> </p>
+                <p> <% out.println(recipe.getDescription()); %> </p>
             </div>
             <div>
                 <p>To do</p> <br>
-                <p> <% recipe.getToDo();%> </p>
+                <p> <% out.println(recipe.getToDo());%> </p>
             </div>
         </div>
     </body>

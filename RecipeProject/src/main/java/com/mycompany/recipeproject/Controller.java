@@ -7,7 +7,7 @@ public class Controller {
     UserDAO userDAO = new UserDAO();
     RecipeDAO recipeDAO = new RecipeDAO();
 
-    public RecipeDTO getRecipe(int id) {
+    public RecipeDTO getRecipeById(int id) {
         RecipeDTO DTO = recipeDAO.getRecipeById(id);
         return DTO;
     }

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "FrontController", urlPatterns = {"/*"})
+@WebServlet(name = "FrontController", urlPatterns = {"/FrontController"})
 public class FrontController extends HttpServlet {
 
     Controller c = new Controller();
@@ -27,24 +27,24 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String origin = request.getParameter("origin");
-        if (origin != null) {
+        //if (origin != null) {
             switch (origin) {
                 case "recipe":
                     int id = 1;//Integer.parseInt(request.getParameter("recipe_id"));
-                    RecipeDTO recipeDTO = c.getRecipe(id);
+                    RecipeDTO recipeDTO = c.getRecipeById(id);
                     request.setAttribute("recipe", recipeDTO);
-                    request.getRequestDispatcher("/RecipeProject/Recipe.jsp").forward(request, response);
+                    request.getRequestDispatcher("Recipe.jsp").forward(request, response);
                     break;
                 case "allrecipes":
                     List<RecipeDTO> recipes = c.getAllRecipes();
                     request.setAttribute("recipes", recipes);
-                    request.getRequestDispatcher("/RecipeProject/AllRecipes.jsp").forward(request, response);
+                    request.getRequestDispatcher("AllRecipes.jsp").forward(request, response);
                 default:
                     response.sendRedirect("/RecipeProject/index");
             }
-        } else {
+        /*} else {
             response.sendRedirect("/RecipeProject/index");
-        }
+        }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
