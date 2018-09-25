@@ -7,7 +7,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% RecipeDTO recipe = (RecipeDTO) request.getAttribute("Recipe"); %>
+        <% RecipeDTO recipe = (RecipeDTO) request.getAttribute("recipe"); %>
         <h1>Recipe: <% recipe.getName(); %></h1>
         <div> 
             <div>

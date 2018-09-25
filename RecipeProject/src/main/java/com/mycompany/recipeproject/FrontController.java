@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "FrontController", urlPatterns = {"/*"})
 public class FrontController extends HttpServlet {
 
+    Controller c = new Controller();
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -23,22 +25,15 @@ public class FrontController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String path = request.getPathInfo();
-        switch (path.substring(1)) {
-            case "Kage":
-                response.sendRedirect("/RecipeProject/RecipeServlet?id=1&flag=true");
-                break;
-            case "/RecipeProject/RecipeServlet?id=1":
-                response.sendRedirect("/RecipeProject/RecipeServlet?id=1&flag=true");
-                break;
-            case "Milkshake":
-                response.sendRedirect("/RecipeProject/RecipeServlet?id=2&flag=true");
-                break;
-            case "/RecipeProject/RecipeServlet?id=2":
-                response.sendRedirect("/RecipeProject/RecipeServlet?id=2&flag=true");
+        String origin = request.getParameter("origin");
+        switch (origin) {
+            case "recipe":
+                int id = Integer.parseInt(request.getParameter("recipe_id"));
+                RecipeDTO recipeDTO = c.getRecipe(id);
+                request.setAttribute("recipe", recipeDTO);
+                request.getRequestDispatcher("Recipe.jsp").forward(request, response);
                 break;
             default:
-                response.sendRedirect("/RecipeProject/AllRecipeServlet?flag=true");
         }
 
     }
