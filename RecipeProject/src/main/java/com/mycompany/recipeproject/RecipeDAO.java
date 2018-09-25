@@ -22,7 +22,7 @@ public class RecipeDAO {
                 String recipe_toDo = res.getString("toDo");
                 int recipe_Cookingtime = Integer.parseInt(res.getString("Cookingtime"));
                 int recipe_User_Id = Integer.parseInt(res.getString("User_Id"));
-                return new RecipeDTO(id, recipe_image_id, recipe_rating, recipe_name, recipe_ingredients, recipe_instructions);
+ //               return new RecipeDTO(id, recipe_Cookingtime, user_id, query, recipe_description, query)
             }
         } catch (Exception ex) {
             ex.printStackTrace();
