@@ -24,7 +24,7 @@ public class UserDAO {
                 System.out.println(user_password);
                 int user_recipe_id = Integer.parseInt(res.getString("recipe_id"));
                 System.out.println(user_recipe_id);
-                return new UserDTO(user_id, user_recipe_id, user_name, user_password);
+                return new UserDTO(user_id, user_name, user_password);
             }
         } catch (Exception ex) {
             ex.printStackTrace();

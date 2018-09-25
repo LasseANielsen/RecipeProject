@@ -18,10 +18,10 @@ public class RecipeDAO {
             while (res.next()) {
                 int recipe_id = Integer.parseInt(res.getString("id"));
                 String recipe_name = res.getString("name");
-                String recipe_ingredients = res.getString("ingredients");
-                String recipe_instructions = res.getString("instructions");
-                int recipe_image_id = Integer.parseInt(res.getString("image_id"));
-                int recipe_rating = Integer.parseInt(res.getString("rating"));
+                String recipe_description = res.getString("Description");
+                String recipe_toDo = res.getString("toDo");
+                int recipe_Cookingtime = Integer.parseInt(res.getString("Cookingtime"));
+                int recipe_User_Id = Integer.parseInt(res.getString("User_Id"));
                 return new RecipeDTO(id, recipe_image_id, recipe_rating, recipe_name, recipe_ingredients, recipe_instructions);
             }
         } catch (Exception ex) {

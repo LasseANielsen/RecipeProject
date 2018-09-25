@@ -1,42 +1,41 @@
 package com.mycompany.recipeproject;
 
 public class RecipeDTO {
-    
-    int id, image_id, rating;
-    String name, ingredients, instructions;
 
-    public RecipeDTO(int id, int image_id, int rating, String name, String ingredients, String instructions) {
+    int id, cookingtime, userId;
+    String name, description, toDo;
+
+    public RecipeDTO(int id, int cookingtime, int userId, String name, String description, String toDo) {
         this.id = id;
-        this.image_id = image_id;
-        this.rating = rating;
+        this.cookingtime = cookingtime;
+        this.userId = userId;
         this.name = name;
-        this.ingredients = ingredients;
-        this.instructions = instructions;
+        this.description = description;
+        this.toDo = toDo;
     }
 
     public int getId() {
         return id;
     }
 
-    public int getImage_id() {
-        return image_id;
+    public int getCookingtime() {
+        return cookingtime;
     }
 
-    public int getRating() {
-        return rating;
+    public int getUserId() {
+        return userId;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getIngredients() {
-        return ingredients;
+    public String getDescription() {
+        return description;
     }
 
-    public String getInstructions() {
-        return instructions;
+    public String getToDo() {
+        return toDo;
     }
-    
-    
+
 }

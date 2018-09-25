@@ -54,8 +54,8 @@ public class RecipeServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>" + recipe.getName() + "</h1>");
             out.println("<img src=\"" + image_path + "\" width=\"210\" height=\"210\">");
-            out.println("<p>" + recipe.getIngredients() + "</p>");
-            out.println("<p>" + recipe.getInstructions() + "</p>");
+            out.println("<p>" + recipe.getDescription() + "</p>");
+            out.println("<p>" + recipe.getToDo() + "</p>");
             out.println("</body>");
             out.println("</html>");
         }
