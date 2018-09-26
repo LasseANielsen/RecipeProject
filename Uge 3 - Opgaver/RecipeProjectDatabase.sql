@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `recipeproject`.`Recipe` (
   `Description` VARCHAR(200) NOT NULL,
   `To_do` VARCHAR(2000) NOT NULL,
   `Cookingtime` INT NOT NULL,
-  `image` VARCHAR(45) NULL,
+  `Image` VARCHAR(45) NULL,
   `User_Id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Recipe_User_idx` (`User_Id` ASC),
