@@ -17,7 +17,7 @@
         <h1>Recipe: <% out.println(recipe.getName()); %></h1>
         <div> 
             <div>
-                <p>Author <% out.println(user.getUsername()); %></p>
+                <p>Author <% //out.println(user.getUsername()); %></p>
             </div> 
             <div>
                 <img src="<% out.println(recipe.getImage()); %>" style="width:256px;height:256px;">
