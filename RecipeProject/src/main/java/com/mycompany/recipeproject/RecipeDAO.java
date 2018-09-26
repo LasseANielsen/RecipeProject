@@ -23,7 +23,7 @@ public class RecipeDAO {
                 int recipe_Cookingtime = Integer.parseInt(res.getString("Cookingtime"));
                 String recipe_image = res.getString("Image");
                 int recipe_User_Id = Integer.parseInt(res.getString("User_Id"));
-                return new RecipeDTO(recipe_id, recipe_Cookingtime, recipe_User_Id, recipe_name, recipe_description, recipe_image, recipe_toDo);
+                return new RecipeDTO(recipe_id, recipe_Cookingtime, recipe_User_Id, recipe_name, recipe_description, recipe_toDo, recipe_image);
             }
         } catch (Exception ex) {
             ex.printStackTrace();

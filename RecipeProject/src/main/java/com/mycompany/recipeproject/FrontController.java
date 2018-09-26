@@ -36,7 +36,9 @@ public class FrontController extends HttpServlet {
                     } catch (NumberFormatException e) {
                     }
                     RecipeDTO recipeDTO = c.getRecipeById(id);
+                    UserDTO userDTO = c.getUserById(recipeDTO.getUserId());
                     request.setAttribute("recipe", recipeDTO);
+                    request.setAttribute("user", userDTO);
                     request.getRequestDispatcher("Recipe.jsp").forward(request, response);
                     break;
                 case "allrecipes":
