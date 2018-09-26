@@ -21,8 +21,13 @@ public class Controller {
         return list;
     }
 
-    public UserDTO getUser(int id) {
+    public UserDTO getUserById(int id) {
         UserDTO DTO = userDAO.getUserById(id);
+        return DTO;
+    }
+    
+    public UserDTO getUserByUsername(String username) {
+        UserDTO DTO = userDAO.getUserByUsername(username);
         return DTO;
     }
 }

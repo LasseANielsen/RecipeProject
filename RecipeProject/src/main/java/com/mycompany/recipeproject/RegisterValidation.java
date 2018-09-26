@@ -15,12 +15,8 @@ public class RegisterValidation {
         if (username.length() < min || username.length() > max) {
             return false;
         }
-        UserDTO user = c.getUserByName(username);
-        if (user != null) {
-            return false;
-        }
-
-        return true;
+        UserDTO user = c.getUserByUsername(username);
+        return user == null;
     }
 
     public boolean validatePassword(String password) {
@@ -31,33 +27,6 @@ public class RegisterValidation {
         if (password.contains(";")) {
             return false;
         }
-        if (password.length() < min || password.length() > max) {
-            return false;
-        }
-
-        return true;
+        return !(password.length() < min || password.length() > max);
     }
-
-    public boolean validateEmail(String email) {
-        int min = 6, max = 200;
-        if (email == null || email.isEmpty()) {
-            return false;
-        }
-        if (email.contains(";")) {
-            return false;
-        }
-        if (email.length() < min || email.length() > max) {
-            return false;
-        }
-        if (!EmailValidator.getInstance().isValid(email)) {
-            return false;
-        }
-        UserDTO user = c.getUserByEmail(email);
-        if (user != null) {
-            return false;
-        }
-
-        return true;
-    }
-
 }

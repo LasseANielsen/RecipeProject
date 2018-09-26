@@ -17,11 +17,30 @@ public class UserDAO {
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
                 int user_id = Integer.parseInt(res.getString("id"));
-                System.out.println(user_id);
                 String user_name = res.getString("name");
-                System.out.println(user_name);
                 String user_password = res.getString("password");
-                System.out.println(user_password);
+                return new UserDTO(user_id, user_name, user_password);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error");
+        }
+        return null;
+    }
+    
+        public UserDTO getUserByUsername(String username) {
+        try {
+            Connection c = new DBConnector().getConnection();
+            Statement stmt = c.createStatement();
+            String query
+                    = "SELECT * "
+                    + "FROM `User` "
+                    + "WHERE `username` = '" + username + "';";
+            ResultSet res = stmt.executeQuery(query);
+            while (res.next()) {
+                int user_id = Integer.parseInt(res.getString("id"));
+                String user_name = res.getString("name");
+                String user_password = res.getString("password");
                 return new UserDTO(user_id, user_name, user_password);
             }
         } catch (Exception ex) {
