@@ -1,3 +1,4 @@
+<%@page import="com.mycompany.recipeproject.RecipeSorter"%>
 <%@page import="java.util.List, com.mycompany.recipeproject.RecipeDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +15,9 @@
         <h1 align="center">All recipes</h1>
         <hr>
         <% List<RecipeDTO> recipes = (List) request.getAttribute("recipes"); %>
+        <% RecipeSorter rs = new RecipeSorter(); %>
+        <p>Sort: <button onclick="<% rs.SortByName(recipes); %>" type="button">Name</button> - <button onclick="<% rs.SortById(recipes); %>"type="button">Id</button></p>
+        <hr>
         <div id="recipes">
             <ul> 
                 <%
