@@ -17,7 +17,7 @@
         <div id="recipes">
             <ul> 
                 <%
-                    int i = 0;
+                    int i = 1;
                     for (RecipeDTO recipe : recipes) {
                         out.println("<li> <a href=\"FrontController?origin=recipe&recipe_id=" + i++ + "\">" + recipe.getName() + "</a> </li>");
                     }
