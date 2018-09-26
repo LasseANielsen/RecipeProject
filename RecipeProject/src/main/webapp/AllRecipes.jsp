@@ -17,17 +17,7 @@
         <% List<RecipeDTO> recipes = (List) request.getAttribute("recipes"); %>
         <% RecipeSorter rs = new RecipeSorter(); %>
         <p>Sort: <button onclick="<% rs.SortByName(recipes); %>" type="button">Name</button> - <button onclick="<% rs.SortById(recipes); %>"type="button">Id</button></p>
-        <hr>
-        <div id="recipes">
-            <ul> 
-                <%
-                    int i = 1;
-                    for (RecipeDTO recipe : recipes) {
-                        out.println("<li> <a href=\"FrontController?origin=recipe&recipe_id=" + i++ + "\">" + recipe.getName() + "</a> </li>");
-                    }
-                %>
-            </ul>
-            <ul>
+                    <ul>
   <li><a href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
   <li class="dropdown">
@@ -39,6 +29,17 @@
     </div>
   </li>
 </ul>
+        <hr>
+        <div id="recipes">
+            <ul> 
+                <%
+                    int i = 1;
+                    for (RecipeDTO recipe : recipes) {
+                        out.println("<li> <a href=\"FrontController?origin=recipe&recipe_id=" + i++ + "\">" + recipe.getName() + "</a> </li>");
+                    }
+                %>
+            </ul>
+
         </div>
     </body>
 </html>
