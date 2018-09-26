@@ -18,7 +18,7 @@
                 <p>Author</p>
             </div> 
             <div>
-                <img src="image" <% out.println(recipe.getImage()); %> width=\"210\" height=\"210\">
+                <img src="<% out.println(recipe.getImage()); %>" style="width:256px;height:256px;">
                 <p>Description</p> <br>
                 <p> <% out.println(recipe.getDescription()); %> </p>
             </div>

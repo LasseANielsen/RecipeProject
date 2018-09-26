@@ -23,7 +23,7 @@ body {
 #error {
     border: solid 20px red;
 }
-ul {
+ul class{
     list-style-type: none;
     margin: 0;
     padding: 0;
