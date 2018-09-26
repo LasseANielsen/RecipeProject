@@ -12,7 +12,7 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <ul>
+        <ul class>
             <li><a href="#home">Home</a></li>
             <li><a href="#news">News</a></li>
             <li class="dropdown">
@@ -23,7 +23,7 @@
                     <a href="#">Link 3</a>
                 </div>
             </li>
-        </ul>
+        </ul class>
         <h1 align="center">All recipes</h1>
         <hr>
         <% List<RecipeDTO> recipes = (List) request.getAttribute("recipes"); %>
