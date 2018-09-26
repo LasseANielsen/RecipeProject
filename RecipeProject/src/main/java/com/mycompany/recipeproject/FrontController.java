@@ -39,6 +39,16 @@ public class FrontController extends HttpServlet {
                     List<RecipeDTO> recipes = c.getAllRecipes();
                     request.setAttribute("recipes", recipes);
                     request.getRequestDispatcher("AllRecipes.jsp").forward(request, response);
+                    break;
+                case "register":
+                    request.getRequestDispatcher("Register.jsp").forward(request, response);
+                    break;
+                case "login":
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
+                    break;
+                case "createrecipe":
+                    request.getRequestDispatcher("CreateRecipe.jsp").forward(request, response);
+                    break;
                 default:
                     response.sendRedirect("index.html");
             }
