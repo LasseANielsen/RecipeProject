@@ -12,18 +12,6 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <ul class>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </li>
-        </ul class>
         <h1 align="center">All recipes</h1>
         <hr>
         <% List<RecipeDTO> recipes = (List) request.getAttribute("recipes"); %>
