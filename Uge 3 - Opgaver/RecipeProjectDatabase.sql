@@ -14,6 +14,10 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 CREATE SCHEMA IF NOT EXISTS `recipeproject` DEFAULT CHARACTER SET utf8 ;
 USE `recipeproject` ;
 
+DROP TABLE IF EXISTS `Recipe_has_ingredient`;
+DROP TABLE IF EXISTS `Ingredient`;
+DROP TABLE IF EXISTS `Recipe`;
+DROP TABLE IF EXISTS `User`;
 -- -----------------------------------------------------
 -- Table `recipeproject`.`User`
 -- -----------------------------------------------------
@@ -34,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `recipeproject`.`Recipe` (
   `Description` VARCHAR(200) NOT NULL,
   `To_do` VARCHAR(2000) NOT NULL,
   `Cookingtime` INT NOT NULL,
+  `image` VARCHAR(45) NULL,
   `User_Id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_Recipe_User_idx` (`User_Id` ASC),
