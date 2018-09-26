@@ -30,7 +30,11 @@ public class FrontController extends HttpServlet {
         if (origin != null) {
             switch (origin) {
                 case "recipe":
-                    int id = 1;//Integer.parseInt(request.getParameter("recipe_id"));
+                    int id = 0;
+                    try {
+                        id = Integer.parseInt(request.getParameter("recipe_id"));
+                    } catch (Exception e) {
+                    }
                     RecipeDTO recipeDTO = c.getRecipeById(id);
                     request.setAttribute("recipe", recipeDTO);
                     request.getRequestDispatcher("Recipe.jsp").forward(request, response);

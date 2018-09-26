@@ -16,9 +16,12 @@
         <% List<RecipeDTO> recipes = (List) request.getAttribute("recipes"); %>
         <div id="recipes">
             <ul> 
-                <% for (RecipeDTO recipe : recipes) {
-                        out.println("<li>" + recipe.getName() + "</li>");
-                    }%>
+                <%
+                    int i = 0;
+                    for (RecipeDTO recipe : recipes) {
+                        out.println("<li> <a href=\"FrontController?origin=recipe&recipe_id=" + i++ + "\">" + recipe.getName() + "</a> </li>");
+                    }
+                %>
             </ul>
         </div>
     </body>
