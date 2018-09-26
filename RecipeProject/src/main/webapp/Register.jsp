@@ -9,6 +9,13 @@
     <body>
         <h1>Register</h1>
     </body>
+    <div id="error">
+        <%
+            if ("true".equals(request.getParameter("error"))) {
+                out.println("<p> Invalid Data! Try agian </p>");
+            }
+        %>
+    </div>
     <div>
         <form action="Validator.jsp">
             <p>Username</p><input type="text" name="username">

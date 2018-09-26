@@ -18,10 +18,10 @@
                     new Controller().createUser(username, password);
                     request.getRequestDispatcher("Login.jsp").forward(request, response);
                 } else {
-                    request.getRequestDispatcher("Register.jsp?error=true").forward(request, response);
+                    response.sendRedirect("Register.jsp?error=true");
                 }
             } else {
-                request.getRequestDispatcher("Register.jsp?error=true").forward(request, response);
+                response.sendRedirect("Register.jsp?error=true");
             }
         %>
         <h1>Validating</h1>
