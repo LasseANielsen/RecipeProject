@@ -12,23 +12,23 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </li>
+        </ul>
         <h1 align="center">All recipes</h1>
         <hr>
         <% List<RecipeDTO> recipes = (List) request.getAttribute("recipes"); %>
         <% RecipeSorter rs = new RecipeSorter(); %>
         <p>Sort: <button onclick="<% rs.SortByName(recipes); %>" type="button">Name</button> - <button onclick="<% rs.SortById(recipes); %>"type="button">Id</button></p>
-                    <ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
-</ul>
         <hr>
         <div id="recipes">
             <ul> 
