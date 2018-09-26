@@ -30,4 +30,7 @@ public class Controller {
         UserDTO DTO = userDAO.getUserByUsername(username);
         return DTO;
     }
+    public void createUser(String username, String password) {
+        userDAO.createUser(username, password);
+    }
 }

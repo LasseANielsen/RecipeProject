@@ -27,8 +27,8 @@ public class UserDAO {
         }
         return null;
     }
-    
-        public UserDTO getUserByUsername(String username) {
+
+    public UserDTO getUserByUsername(String username) {
         try {
             Connection c = new DBConnector().getConnection();
             Statement stmt = c.createStatement();
@@ -48,5 +48,21 @@ public class UserDAO {
             System.out.println("Error");
         }
         return null;
+    }
+
+    public void createUser(String username, String password) {
+        try {
+            Connection c = new DBConnector().getConnection();
+            Statement stmt = c.createStatement();
+            String query
+                    = "INSERT INTO `User`(`username`,`password`) VALUES"
+                    + "('" + username + "','" + password + "')";
+
+            ResultSet res = stmt.executeQuery(query);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error");
+        }
     }
 }
