@@ -10,7 +10,7 @@
     <body>
         <h1>All recipes</h1>
     </body>
-    <h1>Person list</h1>
+    <h1>Recipes</h1>
     <% List<RecipeDTO> recipes = (List) request.getAttribute("recipes"); %>
     <div>
         <ul> 

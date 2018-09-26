@@ -9,9 +9,9 @@
     <body>
         <h1>Login</h1>
     </body>
-    <form action="/todo">");
-        <p>Username</p><input type="text" name="username">");
-        <p>Password</p><input type="text" name="password">");
-        <br><br><input type="submit" value="Login">");
-    </form>");
+    <form action="/todo">
+        <p>Username</p><input type="text" name="username">
+        <p>Password</p><input type="text" name="password">
+        <br><br><input type="submit" value="Login">
+    </form>
 </html>

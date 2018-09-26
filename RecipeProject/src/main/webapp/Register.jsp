@@ -14,6 +14,6 @@
             <p>Username</p><input type="text" name="username">
             <p>Password</p><input type="text" name="password">
             <br><br><input type="submit" value="Create user">
-        </form>");
+        </form>
     </div>
 </html>
