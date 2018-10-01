@@ -30,16 +30,7 @@ public class FrontController extends HttpServlet {
         if (origin != null) {
             switch (origin) {
                 case "recipe":
-                    int id = 1;
-                    try {
-                        id = Integer.parseInt(request.getParameter("recipe_id"));
-                    } catch (NumberFormatException e) {
-                    }
-                    RecipeDTO recipeDTO = c.getRecipeById(id);
-                    UserDTO userDTO = c.getUserById(recipeDTO.getUserId());
-                    request.setAttribute("recipe", recipeDTO);
-                    request.setAttribute("user", userDTO);
-                    request.getRequestDispatcher("Recipe.jsp").forward(request, response);
+                    RecipeHandler(request, response);
                     break;
                 case "allrecipes":
                     List<RecipeDTO> recipes = c.getAllRecipes();
@@ -61,6 +52,19 @@ public class FrontController extends HttpServlet {
         } else {
             response.sendRedirect("index.html");
         }
+    }
+
+    private void RecipeHandler(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        int id = 1;
+        try {
+            id = Integer.parseInt(request.getParameter("recipe_id"));
+        } catch (NumberFormatException e) {
+        }
+        RecipeDTO recipeDTO = c.getRecipeById(id);
+        UserDTO userDTO = c.getUserById(recipeDTO.getUserId());
+        request.setAttribute("recipe", recipeDTO);
+        request.setAttribute("user", userDTO);
+        request.getRequestDispatcher("Recipe.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
